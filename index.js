@@ -64,3 +64,16 @@ function calcRemainingTime(targetDateString) {
 function formatWithZeros(num) {
     return num.toString().padStart(2, '0');
 }
+
+const audio = document.getElementById("song_element")
+
+var isAudioPlaying = false
+setInterval(async ()=> {
+    try{
+        if(!isAudioPlaying){
+            await audio.play()
+        }
+    } catch (e) {
+        console.log("toque na tela")
+    }
+}, 1000)
